@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: 'Signika', sans-serif; 
+  background: #bdbfc1;
+}
+.container {
+  width: 960px;
+  margin:  0;
+}
+.row {
+  margin: -15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px
+}
+
+h3 {
+  font-family: 'Signika', sans-serif; 
+}
+
+nav{
+
+}
+
+ul {
+   list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.login{
+  display: inline;
+}
+
+.radio {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.linkButton {
+  font-family: 'Signika', sans-serif; 
+  text-decoration-line: none;
+  color: black;
+  
+  
+}
+
+header {
+color: #ff4411; 
+font-size: 32px; 
+font-family: 'Signika', sans-serif; 
+padding-bottom: 5px;
+color: #333333; 
+font-family: 'Bitter', serif; 
+font-size: 32px; 
+font-weight: normal; 
+line-height: 54px; 
+margin: 0 0 0px;
+}
+
+.footer {
+  position: fixed; bottom: 0; ;
+}
+
+[class*=col-lg-]{
+  float: left;
+  padding: 0 15px;
+}
+.col-lg-2{
+  width: 8.3333%
+}
+
+.col-lg-3{
+  width: 25%;
+}
+.col-lg-4{
+  width: 33%;
+}
+.col-lg-6{
+  width:  50%;
+}
+.col-lg-8{
+  width: 64%;
+}
+.col-lg-12{
+  width: 100%;
+}
