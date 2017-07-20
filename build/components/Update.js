@@ -6,6 +6,8 @@ export default class Update extends React.Component {
     constructor() {
         super();
            this.handleClickUpdate = this.handleClickUpdate.bind(this);
+           this.handleClickHome = this.handleClickHome.bind(this);
+
     }
 
 
@@ -26,6 +28,10 @@ export default class Update extends React.Component {
         })
     }
 
+    handleClickHome(event){
+        this.props.history.push("/");
+    }
+
     componentWillMount(){
         axios.get('/api/person').then((response) => {
             this.props.loadFeelings(response.data);
@@ -37,7 +43,7 @@ export default class Update extends React.Component {
         if(this.props.feelings && this.props.feelings.length > 0){
             myFeelings = this.props.feelings.map((feeling, index) => 
             <div key={feeling._id}>{feeling.feeling}
-                <button onClick={(event) => this.handleClickUpdate(feeling._id, index)}>Update</button>
+                <button className="waves-effect grey lighten-1 waves-light btn-medium" onClick={(event) => this.handleClickUpdate(feeling._id, index)}>Update</button>
                 <input ref={"update-" + index} type="text"/>
             </div>);
         }
@@ -51,7 +57,7 @@ export default class Update extends React.Component {
                     {myFeelings}
 
                      <div>
-                        <button className="linkButton" type="button" onClick={this.handleClickHome}>Return to Homepage</button>
+                        <button className="waves-effect grey lighten-1 waves-light btn" type="button" onClick={this.handleClickHome}>Return to Homepage</button>
                         {/*<Link to="/">Return to Homepage</Link>*/}
                     </div>
                

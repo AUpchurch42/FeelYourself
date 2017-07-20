@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, browserHistory, Route, Switch, Link, Redirect } from 'react-router-dom';
-import Registration from './Registration';
 import Update from './Update';
-import Profile from './Profile';
+
 import axios from 'axios';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -93,7 +92,7 @@ export default class Homepage extends React.Component{
    
         
     handleClickUpdateLink(event) {
-        this.props.history.push("/Update/" + id);
+        this.props.history.push("/Update/");
     }
 
     handleClickSignup(event) {
@@ -106,7 +105,7 @@ export default class Homepage extends React.Component{
         });      
     }
 
-
+    
 
 
 
@@ -116,21 +115,19 @@ export default class Homepage extends React.Component{
     render(){
         let myFeelings = [];
         if(this.props.feelings && this.props.feelings.length > 0){
-            myFeelings = this.props.feelings.map(feeling => <div key={feeling._id}>{feeling.feeling}<button ref="remove" key={feeling._id} onClick={this.handleClickDelete.bind(this, feeling._id)}>X</button></div>);
+            myFeelings = this.props.feelings.map(feeling => <div key={feeling._id}>{feeling.feeling} - <button className="btn-floating btn waves-effect waves-grey lighten-1" ref="remove" key={feeling._id} onClick={this.handleClickDelete.bind(this, feeling._id)}>x </button></div>);
         }
         return (
             <div className="col s12">
                 {/*<h3>userUd: {this.state.userId}</h3>*/}
-                <h6>How's it Hanging?</h6>
-                <input placeholder="Tell me about it" type="text" ref="feeling" /><label></label><br /><br />
+                <h5>How are you feeling?</h5>
+                <input placeholder="Tell me about it" type="text" ref="feeling" /><label></label><br />
 
-                <button  className="waves-effect pink lighten-1 waves-light btn" type="button" onClick={this.handleClick}>Cherish this feeling</button><br/><br/>
+                <button  className="waves-effect grey lighten-1 waves-light btn" type="button" onClick={this.handleClick}>Post Feeling</button><br/><br/>
                 {/*<BrowserRouter>
                     <div>
                         <Route path="/" render={(routeProps) => <Homepage {...this.props} {...routeProps}/>} />*/}
-                <button id="linkButton" type="button">
-                    <Link to="/Update">Update</Link>
-                </button>
+                
                         {/*<Route
                             exact
                             path="/Update"
@@ -138,7 +135,12 @@ export default class Homepage extends React.Component{
                     </div>
                 </BrowserRouter>       */}
                 {/*<Link className="linkButton" to="/Profile">My Feelings</Link>*/}
+                <h5 className="medium-italic">Feelings Felt:</h5>
                 {myFeelings}
+                <br/>
+                <button className="waves-effect grey lighten-1 waves-light btn" id="linkButton" type="button" onClick={this.handleClickUpdateLink}>Update Feelings
+                    {/* <Link to="/Update">Update</Link> */}
+                </button><br/><br/>
             </div> 
         );
     }

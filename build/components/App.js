@@ -36,7 +36,7 @@ class App extends React.Component {
                 <div>
                     <nav>
                         <div className="nav-wrapper light-blue lighten-1">
-                            <Link to="/" className="brand-logo">Feel Yourself!</Link>
+                            <Link to="/" className="brand-logo">  Feel Yourself!</Link>
                             <Link to="" data-activates="mobile-demo" className="button-collapse" onClick={() => {
                                 $(".button-collapse").sideNav();
                             }}>
