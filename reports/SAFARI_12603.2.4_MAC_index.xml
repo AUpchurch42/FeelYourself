@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="index"
+    errors="0" failures="1" hostname="" id="" package="index" skipped="0"
+    tests="1" time="4.663" timestamp="Tue, 11 Jul 2017 01:31:16 GMT">
+  
+    <testcase name="Demo test Google" classname="index" time="4.663" assertions="3">
+
+    
+
+      <failure message="Testing if element &lt;#main&gt; contains text: &quot;Night Watch&quot;.">    at Object.Demo test Google (/Users/alex_upchurch/Helio_Stuff/end to end testing/tests/index.js:10:15)
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
